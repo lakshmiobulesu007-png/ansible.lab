@@ -1,5 +1,5 @@
 - name: ping the server
-  hosts: all
-  tosks: # list of the tasks/modules/collections
+  hosts: web
+  tosks: 
     - name: ping the server
       ansible.builtin.ping:
