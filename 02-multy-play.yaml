@@ -4,4 +4,4 @@
   tasks: 
     - name: play 01 talk 01
       ansible.builtin.debug:
-      msg:
+        msg:
