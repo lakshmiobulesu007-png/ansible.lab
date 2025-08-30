@@ -1,7 +1,13 @@
 #print multy play
-- name: play 01
+- name: play-01
   hosts: web
   tasks: 
-    - name: play 01 talk 01
+    - name: play-01 talk-01
       ansible.builtin.debug:
-        msg:
+        msg: "this is my fist task"
+- name: play-02
+  hosts: web
+  tasks:
+    - name: play-02 task-01
+      ansible.builtin.debug:
+        msg: "this is my second task"
