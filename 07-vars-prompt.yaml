@@ -3,7 +3,7 @@
   vars_prompt:
     - name: COURSES
       prompt: enter the COURSES NAME
-      ptavite: false
+      pravite: false
     - name: DURATION
       prompt: enter the DURATION
       pravite: false
