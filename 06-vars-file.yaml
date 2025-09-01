@@ -1,7 +1,7 @@
 - name: print the file data
   hosts: web
   vars_files:
-  - guru.yaml
+  - vars.yaml
   tasks:
   - name: print the data
     ansible.builtin.debug:
