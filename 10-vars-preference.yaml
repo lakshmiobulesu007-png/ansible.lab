@@ -4,8 +4,8 @@
     COURSES: "DEVOPS with AWS"
     DURATION: "120hrs"
     TRAINER: "RAMANA"
-  vars_files:
-    - vars.yaml
+  #vars_files:
+  #  - vars.yaml
   #vars_prompt:
   #  - name: COURSES
   #   prompt: enter the courses name
