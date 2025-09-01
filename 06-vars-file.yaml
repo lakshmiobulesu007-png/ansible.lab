@@ -5,4 +5,4 @@
   tasks:
   - name: print the data
     ansible.builtin.debug:
-      msg: "hi i am larning{{NAME}}, game name:{{GAME NAME}}, group name:{{GROUP NAME}}"
+      msg: "hi my name is {{NAME}}, game name:{{GAME NAME}}, group name:{{GROUP NAME}}"
