@@ -6,10 +6,10 @@
     TRAINER: "RAMANA"
   vars_files:
     - vars.yaml
-  vars_prompt:
-    - name: COURSES
-      prompt: enter the courses name
-      private: false
+  #vars_prompt:
+  #  - name: COURSES
+  #   prompt: enter the courses name
+  #    private: false
   tasks:
     - name: printe the tasks 
       vars:
