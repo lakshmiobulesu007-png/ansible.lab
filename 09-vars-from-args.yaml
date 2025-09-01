@@ -1,0 +1,7 @@
+- name: print the argument 
+  hosts: web
+  tasks: 
+  - name: print the arument information
+    ansible.builtin.debug:
+     msg: "hallo {{NAME}}, gratting {{GRATTING}}"
+     
