@@ -1,0 +1,17 @@
+- name: enter the value and print the value
+  hosts: web
+  vars_promot:
+    - name: COURSES
+      prompt: enter the COURSES NAME
+      ptavite: false
+    - name: DURATION
+      prompt: enter the DURATION
+      pravite: false
+    - name: TRAINER
+      prompt: enter the TRAINER NEME
+      pravite: false
+  tasks:
+    - name: print the tasks
+      ansible.builtin.debug:
+        msg: "hi i am a larning {{COURSES}}, DURATION:{{DURATION}}, trainer:{{TRAINER}}"
+        

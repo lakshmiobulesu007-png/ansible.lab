@@ -1,0 +1,8 @@
+- name: print the file data
+  hosts: web
+  vars_files:
+    - guru.yaml:
+  tasks:
+    - name: print the data
+      ansible.builtin.debug:
+        msg: "hi i am larning{{NAME}}, game name:{{GAME NAME}}, group name:{{GROUP NAME}}"
