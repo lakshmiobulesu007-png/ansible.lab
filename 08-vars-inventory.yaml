@@ -1,7 +1,6 @@
 - name: print inventory data
   hosts: web
   tasks:
-    - name: print the vars inventory data
-      ansible.builtin.debug:
-       msg: "hi i am larning{{COURSES}}, duration:{{DURATION}}, trainer:{{TRAINER}}"
-        
+  - name: print the vars inventory data
+    ansible.builtin.debug:
+     msg: "hi i am larning{{COURSES}}, duration:{{DURATION}}, trainer:{{TRAINER}}"
