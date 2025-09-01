@@ -3,5 +3,4 @@
   tasks: 
   - name: print the arument information
     ansible.builtin.debug:
-     msg: "hallo {{NAME}}, gratting {{GRATTING}}"
-     
+     msg: "hallo {{NAME}}, good {{GRATTING}}"
