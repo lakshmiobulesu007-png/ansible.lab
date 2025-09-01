@@ -1,9 +1,9 @@
 - name: print the all vars condication
   hosts: web
-  vars:
-    COURSES: "DEVOPS with AWS"
-    DURATION: "120hrs"
-    TRAINER: "RAMANA"
+  #vars:
+  #  COURSES: "DEVOPS with AWS"
+  #  DURATION: "120hrs"
+  #  TRAINER: "RAMANA"
   #vars_files:
   #  - vars.yaml
   #vars_prompt:
