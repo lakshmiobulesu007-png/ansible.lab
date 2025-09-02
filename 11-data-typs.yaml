@@ -1,0 +1,22 @@
+- name: print the values
+  hosts: local
+  vars:
+    courses: "devops with aws"
+    duration: "120"
+    topics: 
+    - linux
+    - shell
+    - aws
+    - devops
+    - ansible
+    - git
+    live: true
+    tools:
+      ci: "ansible"
+      cm: "devops"
+      cloud: "aws"
+  tasks:
+    - name: ptint the values
+      ansible.builtin.debug:
+        msg: "HI, i am larning {{courses}}, duration:{{duration}},topics:{{topics}},live:{{live}}, tools:{{tools}}"
+
