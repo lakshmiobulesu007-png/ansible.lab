@@ -14,4 +14,3 @@
       ansible.builtin.debug:
         msg: "given number {{my_number}} grater then or equl to 10"
       when: my_number | int < 10
-       

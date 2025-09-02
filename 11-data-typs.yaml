@@ -1,17 +1,17 @@
 - name: print the values
   hosts: local
   vars:
-    courses: "devops with aws"
-    duration: "120"
-    topics: 
+    courses: "devops with aws" # string
+    duration: "120" #number(int)
+    topics: #list
     - linux
     - shell
     - aws
     - devops
     - ansible
     - git
-    live: true
-    tools:
+    live: true #boolean
+    tools:  # map/disctionary
       ci: "ansible"
       cm: "devops"
       cloud: "aws"

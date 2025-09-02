@@ -1,0 +1,14 @@
+- name: create the user information
+  hosts: web
+  become: yes
+  tasks:
+    - name: check user exist or not
+      ansible.builtin.command: id stalin
+      rigister: USER # here USER is a variable that gets output from above command 
+      ignore_error: true
+    - name: print the user data
+      ansible.builtin.debug:
+        msg: "user information:{{USER}}"
+    - name: create the user 
+      ansible.builtin.command: useradd stalin
+      when: USER.rc !=0
