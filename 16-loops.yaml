@@ -2,10 +2,10 @@
   hosts: web
   become: yes
   tasks:
-    - name: ptint the loops
+    - name: ptint the items
       ansible.builtin.debug:
         msg: "Hallo {{item}}"
-      loops:
+      loop:
         - nani
         - guru
         - sanju
