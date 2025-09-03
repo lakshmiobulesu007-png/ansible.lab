@@ -1,0 +1,14 @@
+- name: print the loops
+  hosts: web
+  become: yes
+  tasks:
+  - name: print the loop 
+    ansible.builtin.package:
+     name: "{{ name.item }}"
+     state: "{{ item.state }}"
+    loop:
+    - { name: 'mysql', state: 'present' }
+    - { name: 'nginx', state: 'present' }
+    - { name: 'postfix', state: 'present' }
+    - { name: 'httpd', stare: 'present' }
+    when: ansible_os_family == "RedHat"   
