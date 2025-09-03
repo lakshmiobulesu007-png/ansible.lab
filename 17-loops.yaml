@@ -1,0 +1,13 @@
+- name: install packges in loop methed
+  hosts: web
+  become: yes
+  tasks:
+  - name: install packges
+    ansible.builtin.package:
+     msg: "{{item}}"
+    loop:
+     - nginx
+     - mysql
+     - pstpix
+     - httpd
+     - redis  
