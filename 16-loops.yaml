@@ -1,0 +1,13 @@
+- name: print the loops statment
+  hosts: web
+  become: yes
+  tasks:
+    - name: ptint the loops
+      ansible.builtin.debian:
+        msg: "Hallo {{item}}"
+      loops:
+        - nani
+        - guru
+        - sanju
+        - hanok
+        - srikanth
