@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: ptint the loops
-      ansible.builtin.debian:
+      ansible.builtin.debug:
         msg: "Hallo {{item}}"
       loops:
         - nani
