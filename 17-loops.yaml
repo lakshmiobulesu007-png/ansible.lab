@@ -9,6 +9,6 @@
     loop:
      - nginx
      - mysql
-     - pstpix
+     - potpix
      - httpd
      - redis  
