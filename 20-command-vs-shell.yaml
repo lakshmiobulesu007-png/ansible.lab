@@ -4,4 +4,11 @@
   tasks:
   - name: exquat the command
     ansible.builtin.shell: ls -ltri > /tmp/output.txt
-
+      # shell moule: its login to the server and execute command inside server : shell module
+      # just issue the command: command module
+  - name: exit the shell
+    ansible.builtin.shell: ps -ef | grep ssh
+    register: output
+  - name: exit the command
+    ansible.builtin.command: ps ef | grep ssh
+    register: output
