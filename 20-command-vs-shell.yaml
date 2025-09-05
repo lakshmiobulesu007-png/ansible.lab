@@ -3,4 +3,5 @@
   become: yes
   tasks:
   - name: exquat the command
-    ansible.builtin.command: ls -ltri 
+    ansible.builtin.command: ls -ltri > /tmp/output.txt
+    
