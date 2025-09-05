@@ -4,7 +4,7 @@
   tasks:
   - name: ptint the default variable
     ansible.builtin.debug:
-    msg: "{{ course | default ('ansible')}}" #If undefined variable then default can call the variable = Handling undefined variables
+      msg: "{{ course | default ('ansible')}}" #If undefined variable then default can call the variable = Handling undefined variables
   
   - name: convert the uppercases
     vars:
