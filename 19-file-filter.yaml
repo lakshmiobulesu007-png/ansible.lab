@@ -32,3 +32,19 @@
       numbers: [ 2,2,2,2,1,1,1,3,1,5,3,20,2,4,10,8,6,7,8,0, ]
     ansible.builtin.debug:
       msg: " revers type {{ numbers | sort }}, {{numbers | reverse}}"
+  - name: convert map / disctionary to list
+    vars:
+      course:
+        name: "devops with aws"
+        duration: "130hrs"
+        trainer: "ramana"
+    ansible.builtin.debug:
+      msg: "{{course | dist2itens}}"
+  - name: convert the disctionary/map to list
+    vars:
+      course:
+      - { "key": "name", "value": "DEVOPS WITH AWS" }
+      - { "key": "duration", "value": "130" }
+      - { "key": "trainer", "value": "ramana" }
+    ansible.builtin.debug:
+      msg: "{{ course | item2dist }}"
