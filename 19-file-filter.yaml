@@ -39,7 +39,7 @@
         duration: "130hrs"
         trainer: "ramana"
     ansible.builtin.debug:
-      msg: "{{ course | dict2itens }}"
+      msg: "{{ course | dict2item }}"
   - name: convert the disctionary/map to list
     vars:
       course:
