@@ -5,13 +5,15 @@
   - name: ptint the default variable
     ansible.builtin.debug:
     msg: "{{ course | default ('ansible')}}" #If undefined variable then default can call the variable = Handling undefined variables
-  vars:
+  
   - name: convert the uppercases
-    greeting: "hillo ramena"
+    vars:
+      greeting: "hillo ramena"
     ansible.builtin.debug:
       msg: "{{ greeting | upper }}"
 
   - name: convert the lower cases
-    greeting: "HALLO RAMANA"
+    vars:
+      greeting: "HALLO RAMANA"
     ansible.builtin.debug:
       msg: "greeting {{ greeting | lower }}"
