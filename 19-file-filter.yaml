@@ -28,7 +28,7 @@
     ansible.builtin.debug:
       msg: " min= {{ numbers | min }}, max= {{ numbers | max }}"
   - name: print the numbers reverse
-    vasr: 
+    vars: 
       numbers: [ 2,2,2,2,1,1,1,3,1,5,3,20,2,4,10,8,6,7,8,0, ]
     ansible.builtin.debug:
-      msg: " revers type {{ numbers | revers }}"
+      msg: " revers type {{ numbers | ascendind_order }}, {{numbers | discending_order}}"
