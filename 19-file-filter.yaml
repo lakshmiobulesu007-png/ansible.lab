@@ -31,4 +31,4 @@
     vasr: 
       numbers: [ 2,2,2,2,1,1,1,3,1,5,3,20,2,4,10,8,6,7,8,0, ]
     ansible.builtin.debug:
-      msg: " revers type {{ numbers | descending }}, {{ numbers | ascending }} "
+      msg: " revers type {{ numbers | revers }}"
