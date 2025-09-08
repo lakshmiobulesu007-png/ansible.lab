@@ -5,7 +5,7 @@
     subnet_id: "subnet-08f729b0eec39634f"
     sg_id: "sg-0c86d154202a71583"
     ami_id: "ami-09c813fb71547fc4f"
-    instances:
+    instancs:
     - mysql
     - backend
     - frontend
@@ -24,11 +24,11 @@
      instance_type: t3.micro
      image_id: "{{ami_id}}"
      security_group: "{{sg_id}}"
-    loop: "{{instances}}"
-    register: ec2_instances
+    loop: "{{instancs}}"
+    register: ec2_instancs
   - name: print the output
     ansible.builtin.debug:
-      msg: "{{ec2_instances}}"
+      msg: "{{ec2_instancs}}"
   - name: creat route53 
     amazon.aws.route53:
      state: present
@@ -39,7 +39,7 @@
      value: "{{ item.instancs[0].private_ip_address }}"
      wait: true
      overwrite: true
-    loop: "{{ ec2_instances.results }}"
+    loop: "{{ ec2_instancs.results }}"
   - name: creat route53 
     amazon.aws.route53:
      state: present
@@ -47,8 +47,8 @@
      record: "{{zone}}"
      type: A
      ttl: 1
-     value: "{{ item.instances[0].public_ip_address }}"
+     value: "{{ item.instancs[0].public_ip_address }}"
      wait: true
      overwrite: true
-    loop: "{{ ec2_instances.results }}"
+    loop: "{{ ec2_instancs.results }}"
     when: item.item == "frontend"
