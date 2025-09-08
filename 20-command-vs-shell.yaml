@@ -11,4 +11,4 @@
     register: output
   - name: exit the command
     ansible.builtin.command: ps ef | grep ssh
-    register: output
+    register: output 

@@ -1,0 +1,5 @@
+- name: creat the instance and 
+  hosts: local
+  connection: local
+  vars:
+   
