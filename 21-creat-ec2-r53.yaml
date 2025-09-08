@@ -11,6 +11,12 @@
     - frontend
     zone: stalin.icu
   tasks:
+  - name: ansible to install botocore and boto3
+    ansible.builtin.pip:
+      name: 
+      - boto3
+      - botocore
+      executable: pip3.9  
   - name: creat ec2 instance
     amazon.aws.ec2_instance:
      name: " {{ item }}"
