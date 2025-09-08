@@ -5,7 +5,7 @@
     subnet_id: "subnet-08f729b0eec39634f"
     sg_id: "sg-0c86d154202a71583"
     ami_id: "ami-09c813fb71547fc4f"
-    instance:
+    instances:
     - mysql
     - backend
     - frontend
@@ -17,18 +17,18 @@
       - boto3
       - botocore
       executable: pip3.9  
-  - name: creat ec2 instance
+  - name: creat ec2 instances
     amazon.aws.ec2_instance:
      name: "{{item}}"
      vpc_subnet_id: "{{subnet_id}}"
      instance_type: t3.micro
      image_id: "{{ami_id}}"
      security_group: "{{sg_id}}"
-    loop: "{{instance}}"
-    register: ec2_instance
+    loop: "{{instances}}"
+    register: ec2_instances
   - name: print the output
     ansible.builtin.debug:
-      msg: "{{ec2_instance}}"
+      msg: "{{ec2_instances}}"
   - name: creat route53 
     amazon.aws.route53:
      state: present
@@ -36,10 +36,10 @@
      record: "{{item.item}}.{{zone}}"
      type: A
      ttl: 1
-     value: "{{ item.instance[0].private_ip_address }}"
+     value: "{{ item.instancs[0].private_ip_address }}"
      wait: true
      overwrite: true
-    loop: "{{ ec2_instance.results }}"
+    loop: "{{ ec2_instances.results }}"
   - name: creat route53 
     amazon.aws.route53:
      state: present
@@ -47,8 +47,8 @@
      record: "{{zone}}"
      type: A
      ttl: 1
-     value: "{{ item.instance[0].public_ip_address }}"
+     value: "{{ item.instances[0].public_ip_address }}"
      wait: true
      overwrite: true
-    loop: "{{ ec2_instance.results }}"
+    loop: "{{ ec2_instances.results }}"
     when: item.item == "frontend"
